@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
+import { AnalyticsProvider } from '@yext/answers-react-components';
+import PodcastPage from './pages/PodcastPage';
+
+const config = {
+  apiKey: 'ec92413f7c7e5853a736f5750c70ec32',
+  experienceKey: 'ask-joe',
+  locale: 'en',
+  experienceVersion: 'STAGING',
+  businessId: 2479583,
+  endpoints: {
+    universalSearch: 'https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query?someparam=blah',
+    verticalSearch: 'https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/query',
+    questionSubmission: 'https://liveapi-sandbox.yext.com/v2/accounts/me/createQuestion',
+    status: 'https://answersstatus.pagescdn.com',
+    universalAutocomplete: 'https://liveapi-sandbox.yext.com/v2/accounts/me/answers/autocomplete',
+    verticalAutocomplete: 'https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/autocomplete',
+    filterSearch: 'https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch'
+  },
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AnswersHeadlessProvider {...config}>
+        <AnalyticsProvider {...config}>
+          <main className="min-h-screen bg-gray-50">
+            <PodcastPage />
+          </main>
+        </AnalyticsProvider>
+      </AnswersHeadlessProvider>
     </div>
   );
 }
