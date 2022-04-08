@@ -1,8 +1,7 @@
 import { useAnswersActions, useAnswersState } from '@yext/answers-headless-react';
 import { SearchBar, VerticalResults, StandardCard, Filters, AppliedFilters } from '@yext/answers-react-components';
 import { useEffect } from 'react';
-// import { ParksCard } from '../cards/ParksCard';
-import youtubeLogo from '../assets/logo_youtube.svg';
+import { VideoCard } from '../cards/VideoCard';
 
 export default function PodcastPage() {
 
@@ -50,7 +49,7 @@ export default function PodcastPage() {
                     </ul>
                 </nav>
             </header>
-            <div className="flex m-6">
+            <div className="container mx-auto py-4 px-6">
                 <Filters.Facets searchOnChange={true} className='mr-8 text-left min-w-[12rem]'>
                     {facets => facets.map((f, i) => {
                         if (f.options.length === 0) {
@@ -80,7 +79,7 @@ export default function PodcastPage() {
                         <div>no results darn </div>
                     }
                     <VerticalResults
-                        CardComponent={StandardCard}
+                        CardComponent={VideoCard}
                         displayAllOnNoResults={false}
                     />
                 </div>
