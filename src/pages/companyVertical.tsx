@@ -3,7 +3,7 @@ import { SearchBar, VerticalResults, StandardCard, Filters, AppliedFilters } fro
 import { useEffect } from 'react';
 import { VideoCard } from '../cards/VideoCard';
 
-export default function PodcastPage() {
+export default function CompanyPage() {
 
     const answersActions = useAnswersActions();
     //set up vertical 
@@ -19,7 +19,7 @@ export default function PodcastPage() {
             ...stateToClear
         });
         //update the vertical
-        answersActions.setVertical('video_games');
+        answersActions.setVertical('companies');
         //determine number per page
         answersActions.setVerticalLimit(8);
         //fire an empty query on page load
