@@ -2,6 +2,7 @@
   "name": "ask-joe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://abowles123.github.io/yext-answers-ask-joe",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -12,6 +13,7 @@
     "@types/react-dom": "^17.0.15",
     "@yext/answers-headless-react": "^1.1.0-beta.7",
     "@yext/answers-react-components": "^0.1.1-beta.5",
+    "gh-deploy": "^0.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
@@ -23,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
