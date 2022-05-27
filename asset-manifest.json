@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/yext-answers-ask-joe/static/css/main.138e372b.css",
-    "main.js": "/yext-answers-ask-joe/static/js/main.dc5e4103.js",
+    "main.css": "/yext-answers-ask-joe/static/css/main.cd494ed4.css",
+    "main.js": "/yext-answers-ask-joe/static/js/main.48d5a0c8.js",
     "static/js/787.3a31f8c0.chunk.js": "/yext-answers-ask-joe/static/js/787.3a31f8c0.chunk.js",
     "index.html": "/yext-answers-ask-joe/index.html",
-    "main.138e372b.css.map": "/yext-answers-ask-joe/static/css/main.138e372b.css.map",
-    "main.dc5e4103.js.map": "/yext-answers-ask-joe/static/js/main.dc5e4103.js.map",
+    "main.cd494ed4.css.map": "/yext-answers-ask-joe/static/css/main.cd494ed4.css.map",
+    "main.48d5a0c8.js.map": "/yext-answers-ask-joe/static/js/main.48d5a0c8.js.map",
     "787.3a31f8c0.chunk.js.map": "/yext-answers-ask-joe/static/js/787.3a31f8c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.138e372b.css",
-    "static/js/main.dc5e4103.js"
+    "static/css/main.cd494ed4.css",
+    "static/js/main.48d5a0c8.js"
   ]
 }
