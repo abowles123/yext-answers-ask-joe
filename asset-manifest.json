@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/yext-answers-ask-joe/static/css/main.cd494ed4.css",
-    "main.js": "/yext-answers-ask-joe/static/js/main.48d5a0c8.js",
+    "main.js": "/yext-answers-ask-joe/static/js/main.9fda006f.js",
     "static/js/787.3a31f8c0.chunk.js": "/yext-answers-ask-joe/static/js/787.3a31f8c0.chunk.js",
     "index.html": "/yext-answers-ask-joe/index.html",
     "main.cd494ed4.css.map": "/yext-answers-ask-joe/static/css/main.cd494ed4.css.map",
-    "main.48d5a0c8.js.map": "/yext-answers-ask-joe/static/js/main.48d5a0c8.js.map",
+    "main.9fda006f.js.map": "/yext-answers-ask-joe/static/js/main.9fda006f.js.map",
     "787.3a31f8c0.chunk.js.map": "/yext-answers-ask-joe/static/js/787.3a31f8c0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd494ed4.css",
-    "static/js/main.48d5a0c8.js"
+    "static/js/main.9fda006f.js"
   ]
 }
