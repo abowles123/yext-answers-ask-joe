@@ -50,6 +50,9 @@ function App() {
                       <div className="text-blue-600">
                       <Link to="/companies">Publishers and Platforms</Link>
                       </div>
+                      <div className="text-blue-600">
+                        <a href='https://abowles123.github.io/yext-answers-ask-joe/'>Refresh for Github Link</a>
+                      </div>
                     </li>
                   </ul>
                 </nav>
