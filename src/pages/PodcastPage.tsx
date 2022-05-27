@@ -1,5 +1,6 @@
 import { useAnswersActions, useAnswersState } from '@yext/answers-headless-react';
-import { SearchBar, VerticalResults, StandardCard, Filters, AppliedFilters } from '@yext/answers-react-components';
+import { SearchBar, VerticalResults, ResultsCount, AppliedFilters } from '@yext/answers-react-components';
+import { StaticFilters } from '@yext/answers-react-components/lib/components/Filters';
 import { useEffect } from 'react';
 import { VideoCard } from '../cards/VideoCard';
 
@@ -38,7 +39,7 @@ export default function PodcastPage() {
                 <h1 className="font-bold">
                     Video Game Sales
                 </h1>
-                <SearchBar placeholder='Search Here' customCssClasses={{ container: 'mb-0 w-full max-w-2xl' }}/>
+                <SearchBar placeholder='Search Here' />
                 <nav>
                     <ul className="list-none">
                         <li>
@@ -49,30 +50,10 @@ export default function PodcastPage() {
                     </ul>
                 </nav>
             </header>
+            <div className="flex justify-center text-xl">
+                <ResultsCount />
+            </div>
             <div className="container mx-auto py-4 px-6">
-                <Filters.Facets searchOnChange={true} className='mr-8 text-left min-w-[12rem]'>
-                    {facets => facets.map((f, i) => {
-                        if (f.options.length === 0) {
-                            return null;
-                        }
-                        return (
-                            <div key={f.fieldId} className='md:w-40 mr-10'>
-                                <Filters.FilterGroup fieldId={f.fieldId}>
-                                    <Filters.CollapsibleLabel label={f.displayName} />
-                                    <Filters.CollapsibleSection>
-                                        <Filters.SearchInput />
-                                        {f.options.map(o =>
-                                            <Filters.CheckboxOption
-                                                key={o.displayName}
-                                                value={o.value}
-                                            />
-                                        )}
-                                    </Filters.CollapsibleSection>
-                                </Filters.FilterGroup>
-                            </div>
-                        );
-                    })}
-                </Filters.Facets>
                 <div className="w-96 mx-auto">
                     <AppliedFilters />
                     {verticalResults.length === 0 &&

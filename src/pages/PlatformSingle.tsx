@@ -1,9 +1,7 @@
 import {
     useLocation,
   } from "react-router-dom";
-import { VideoCardData } from '../cards/VideoCard';
-import logoNintendo from '../assets/logo_nintendo.jpeg';
-import logoWii from '../assets/logo_wii.jpg';
+import { CompanyCardData, LinkedEntity } from '../cards/CompanyCard';
 import Icon from "../components/icon";
 import {
     renderHighlightedValue,
@@ -12,42 +10,63 @@ import PublisherIcon from "../components/publisher"
 import PublisherDesc from "../components/publisherDesc"
 import PlatformDesc from "../components/platformDesc"
 
+
 interface GameState {
-    data: VideoCardData
+    data: CompanyCardData
+}
+
+
+
+function listOfGames(games: LinkedEntity[]){
+    return games.map((game: LinkedEntity) => {
+        return (
+            <li>{game.name}</li>
+        );
+    });
 }
 
 export default function MyComponent () {
     let location = useLocation();
     const myState: GameState = location.state as GameState;
-    console.log(location);
+    console.log({myState});
     return (
         <div>
             <div>
-                <div className="my-5 py-10 text-9xl font-medium text-center bg-gradient-to-r from-blue-100 to-red-100 outline-2">
-                    {myState.data.name && renderHighlightedValue(myState.data.name)}
-                </div>
-                <div className="my-10 flex justify-center">
-                    <div className="mx-5">
-                        <img src="https://place-hold.it/300x200" alt="" />
-                    </div>
+                <div className="flex flex-col my-5 py-10 text-9xl font-medium text-center bg-gradient-to-r from-blue-100 to-red-100 outline-2">
                     <div>
-                        game desc
+                    {myState.data.name && renderHighlightedValue(myState.data.name)} 
+                    </div>
+                    <div className="text-4xl my-5 underline text-blue-600">
+                    {myState.data.website && <a href={myState.data.website}>Official Website</a>}
                     </div>
                 </div>
-                <div className="flex justify-center">
-                    <div className="mx-5">
-                        {/* <Icon platform={myState.data.platform[0]} /> */}
+                <div className="max-w-4xl mx-auto">
+                <div className="bg-black h-2">
                     </div>
-                    <div>
-                        {/* <PlatformDesc platform={myState.data.platform[0]}/> */}
+                <div className="container mx-auto py-10 px-5 flex flex-flow justify-center bg-gradient-to-r from-blue-100 to-red-100">
+                    <div className="mx-5">
+                        <Icon platform={myState.data.deviceID}/>
+                    </div>
+                    <div className="text-4xl font-medium">
+                        <PlatformDesc platform={myState.data.deviceID}/>
                     </div>
                 </div>
-                <div className="my-10 flex justify-center">
-                    <div className="mx-5">
-                        <PublisherIcon publisher={myState.data.publisher}/>
+                <div className="bg-black h-2">
                     </div>
-                    <div>
-                        <PublisherDesc publisher={myState.data.publisher}/>
+                    <div className="text-4xl font-medium container mx-auto py-10 px-5 bg-gradient-to-r from-blue-100 to-red-100">
+                    <div className="pb-5 flex justify-center">
+                        List of Games With This Publisher/Platform:
+                    </div>
+                    <div className="flex justify-center mb-10 text-3xl">
+                        Games: {myState.data.gameList?.length}
+                    </div>
+                    <div className = "columns-3 text-2xl font-medium">
+                    {myState.data.gameList.length && <ul>
+                        {listOfGames(myState.data.gameList)}
+                    </ul>}
+                    </div>
+                </div>
+                <div className="bg-black h-2">
                     </div>
                 </div>
             </div>

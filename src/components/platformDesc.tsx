@@ -16,7 +16,7 @@ const getIcon = (platform: string) => {
             return (
                 <span>The Gameboy, a handheld 8 bit device, was created by Nintendo and first released in 1989. This device was a physical combination of the NES features, as well as Game and Watch hardware. </span>
         );
-        case "DS":
+        case "GB":
             return (
                 <span>The DS, a handheld device created by Nintendo, was first released in 2004. DS, most commonly referring to “Dual Screens,” made light of the DS’s unique feature: two LCD screens working together.</span>
             );
@@ -48,6 +48,10 @@ const getIcon = (platform: string) => {
             return (
                <span>The Playstation, a console created by Sony, launched its first version in 1994. Since then, there have been four more iterations, with the Playstation 5 being the latest to date.</span>
             );
+        case "DS":
+            return (
+                <span>The DS, a handheld device created by Nintendo, was first released in 2004. DS, most commonly referring to “Dual Screens,” made light of the DS’s unique feature: two LCD screens working together.</span>
+                )
         case "Default":
             return (
                 <div>Hey</div>
@@ -64,7 +68,7 @@ const PlatformDesc = (props: IconProps) => {
     
 
     return (
-        <div className="w-56 h-56">
+        <div className="max-w-2xl">
             {getIcon(props.platform)}
         </div>
     );

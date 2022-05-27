@@ -2,7 +2,8 @@ import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
 import { AnalyticsProvider } from '@yext/answers-react-components';
 import PodcastPage from './pages/PodcastPage';
 import GamePage from './pages/gamepage';
-import CompanySingle from './pages/CompanySingle';
+import PlatformSingle from './pages/PlatformSingle';
+import PublisherSingle from './pages/PublisherSingle';
 import CompanyVertical from './pages/companyVertical';
 
 import {
@@ -37,16 +38,16 @@ function App() {
     <div className="App">
       <AnswersHeadlessProvider {...config}>
         <AnalyticsProvider {...config}>
-          <main className="min-h-screen bg-gradient-to-r from-cyan-100 to-blue-100">
+          <main className="min-h-screen bg-gradient-to-r from-cyan-100 to-green-50">
             <Router>
               <div>
                 <nav>
                   <ul>
                     <li>
-                      <div>
+                      <div className="text-blue-600">
                       <Link to="/">Home</Link>
                       </div>
-                      <div>
+                      <div className="text-blue-600">
                       <Link to="/companies">Publishers and Platforms</Link>
                       </div>
                     </li>
@@ -56,7 +57,8 @@ function App() {
                   <Route path="/" element={<PodcastPage/>} />
                   <Route path="/games/:id" element={<GamePage />}/>
                   <Route path="/companies" element={<CompanyVertical/>} />
-                  <Route path="/ce_platform/:id" element={<CompanySingle/>}/>
+                  <Route path="/platform/:id" element={<PlatformSingle/>}/>
+                  <Route path="/publisher/:id" element={<PublisherSingle/>}/>
                 </Routes>
               </div>
             </Router>
